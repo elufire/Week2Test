@@ -53,17 +53,7 @@ public class BinarySearchTree {
     }
 
     public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
 
-        tree.insert(55);
-        tree.insert(16);
-        tree.insert(96);
-        tree.insert(88);
-        tree.insert(14);
-        tree.insert(78);
-        tree.insert(80);
-        tree.insert(77);
-        tree.preorder();
     }
 }
 

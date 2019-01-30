@@ -6,46 +6,65 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    RickyLinkedList rickyList;
-    String givenString;
-    QueueUsingStack rickyQueue;
-    ArrayList<Integer> queueList;
-    CustomArrayList customArrayList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Default constructor - let's put "0" into head element.
-       rickyList = new RickyLinkedList();
-       rickyQueue = new QueueUsingStack();
 
-       queueList = new ArrayList<>();
-       queueList.add(1);
+
+
+
+
+    }
+
+    public static void main(String [] args){
+        RickyLinkedList rickyList;
+        String givenString;
+        QueueUsingStack rickyQueue;
+        ArrayList<Integer> queueList;
+        givenString = "Hallo";
+        rickyList = new RickyLinkedList();
+        rickyQueue = new QueueUsingStack();
+        BinarySearchTree tree = new BinarySearchTree();
+
+        tree.insert(55);
+        tree.insert(16);
+        tree.insert(96);
+        tree.insert(88);
+        tree.insert(14);
+        tree.insert(78);
+        tree.insert(80);
+        tree.insert(77);
+        System.out.println("Binary Search Tree Preorder: ");
+        tree.preorder();
+        System.out.println(" ");
+        queueList = new ArrayList<>();
+        queueList.add(1);
         queueList.add(2);
         queueList.add(3);
         QueueUsingStack.Queue gQueue = new QueueUsingStack.Queue();
         rickyQueue.enQueue(gQueue, queueList.get(0));
         rickyQueue.enQueue(gQueue, queueList.get(1));
         rickyQueue.enQueue(gQueue, queueList.get(2));
+        System.out.println("Queue using stacks: ");
         System.out.println(rickyQueue.deQueue(gQueue) +" "+  rickyQueue.deQueue(gQueue)+" " + rickyQueue.deQueue(gQueue));
-                givenString = "Hallo";
+        System.out.println(" ");
+
+        System.out.println("Custom Linked list: ");
         rickyList.add("1");
         rickyList.add("2");
         rickyList.add("3");
         rickyList.add("4");
         rickyList.add("5");
 
-        /*
-         * Please note that primitive values can not be added into LinkedList directly. They must be converted to their
-         * corresponding wrapper class.
-         */
-
-
         for(int i=0; i<rickyList.size();i++){
             System.out.println(rickyList.get(i) + "\n");
         }
 
-
+//        for(int i=0; i<givenString.length();i++){
+//            customArrayList.addElement(givenString.charAt(i));
+//        }
 
     }
 
